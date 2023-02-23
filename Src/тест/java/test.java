@@ -1,8 +1,41 @@
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.lessThanOrEqualTo;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class test {
 
+    @Test
+    public void contains1() {
 
+        Calculator calc = Calculator.instance.get();
+        int a = calc.multiply.apply(2, 2);
+        assertThat(a, lessThanOrEqualTo(4));
+
+
+    }
+    @Test
+    public void contains2() {
+
+        Calculator calc = Calculator.instance.get();
+        int a = calc.pow.apply(2);
+        assertThat(a, lessThanOrEqualTo(4));
+
+
+    }
+    @Test
+    public void contains3() {
+
+        Calculator calc = Calculator.instance.get();
+        int a = calc.abs.apply(2);
+        assertThat(a, lessThanOrEqualTo(-2));
+
+
+    }
     @org.junit.jupiter.api.Test
     public void test_Plus() {
         // given:
@@ -12,7 +45,7 @@ public class test {
         int result = calc.plus.apply(a, b);
 
         // then:
-        Assertions.assertEquals(expected, result);
+        assertEquals(expected, result);
         //   Assertions.***;
     }
 
@@ -25,7 +58,7 @@ public class test {
         int result = calc.minus.apply(a, b);
 
         // then:
-        Assertions.assertEquals(expected, result);
+      assertEquals(expected, result);
         //   Assertions.***;
     }
 
@@ -39,7 +72,7 @@ public class test {
         int c = calc.devide.apply(a, b);
 
         // then:
-        Assertions.assertEquals(expected, c);
+        assertEquals(expected, c);
         //   Assertions.***;
     }
 
